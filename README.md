@@ -1,6 +1,6 @@
 # O365VersionToBuildMap
 
-PowerShell Script to Capture Office 365 Build to Version Mappings.
+PowerShell Script to Capture Office 365 Build to Version Mappings. This is a fork of https://github.com/ChrisKibble/O365VersionToBuildMap.
 
 ## Get-Office365BuildToVersionMap
 
