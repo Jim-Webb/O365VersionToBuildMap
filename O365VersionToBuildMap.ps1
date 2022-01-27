@@ -3,20 +3,16 @@
 	<#
 	.SYNOPSIS
 		Used to scrape the Office 365 docs to pull version and build info.
-	
 	.DESCRIPTION
 		Originally by Chris Kibble, used to pull version and build info for Office 365 and output for use by other scripts.
-	
 	.PARAMETER Channel
 		A description of the Channel parameter.
-	
 	.EXAMPLE
-				PS C:\> Get-Office365BuildToVersionMap -Channel semi-annual-enterprise-channel
-	
+		PS C:\> Get-Office365BuildToVersionMap -Channel semi-annual-enterprise-channel
 	.EXAMPLE
-				PS C:\> Get-Office365BuildToVersionMap -Channel All
+		PS C:\> Get-Office365BuildToVersionMap -Channel All
 	.EXAMPLE
-				PS C:\> Get-Office365BuildToVersionMap -Channel semi-annual-enterprise-channel | Export-Csv -NoTypeInformation -Path C:\Temp\O365BuildtoVersion.csv
+		PS C:\> Get-Office365BuildToVersionMap -Channel semi-annual-enterprise-channel | Export-Csv -NoTypeInformation -Path C:\Temp\O365BuildtoVersion.csv
 	.NOTES
 		The purpose of this function is to go to the Microsoft support sites and download the Version and Build information.  It will then
         map it into an array that can be referenced for other things or exported to a CSV.
@@ -41,10 +37,6 @@
 		[ValidateSet('semi-annual-enterprise-channel', 'semi-annual-enterprise-channel-preview', 'monthly-enterprise-channel', 'All')]
 		[string]$Channel = 'semi-annual-enterprise-channel'
 	)
-	
-<#
-        
-    #>
 	
 	[regex]$rxBuilds = '<p><em>Version (.*)<\/em><\/p>' # Regular Expression that Finds the Version/BUild Numbers from the Page
 	$urlBase = "https://docs.microsoft.com/en-us/officeupdates" # Start page for all Office Update pages by Year and Update Type
