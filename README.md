@@ -10,9 +10,15 @@ The purpose of this function is to go to the Microsoft support sites and downloa
 
     # Get Map and then Export to Screen.
     Get-Office365BuildToVersionMap | Sort-Object versionNumber
-    
-    # Get Map and then Export to CSV.
-    Get-Office365BuildToVersionMap | Export-CSV $env:temp\Office365BuildToVersionMap.csv -NoTypeInformation
+
+    # Get Map for semi-annual-enterprise-channel only
+    Get-Office365BuildToVersionMap -Channel semi-annual-enterprise-channel
+
+    # Get Map for all channels
+    Get-Office365BuildToVersionMap -Channel All
+
+    # Get Map monthly-enterprise-channel for and then Export to CSV.
+    Get-Office365BuildToVersionMap -Channel monthly-enterprise-channel | Export-CSV $env:temp\Office365BuildToVersionMap.csv -NoTypeInformation
 
 Sample Output:
 
