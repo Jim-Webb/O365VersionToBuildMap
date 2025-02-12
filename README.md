@@ -80,3 +80,4 @@ Sample Output (abbreviated):
     INSERT INTO O365BuildToVersionMap (VersionNumber, BuildNumber) VALUES ('16.0.9330.2124','1805');
     INSERT INTO O365BuildToVersionMap (VersionNumber, BuildNumber) VALUES ('16.0.10228.20080','1806');
     INSERT INTO O365BuildToVersionMap (VersionNumber, BuildNumber) VALUES ('16.0.10228.20104','1806');
+	
